@@ -1,15 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>App de GPS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button (click)="getCurrentLocation()">Obtener ubicación</ion-button>
+<ion-content class="ion-padding">
+  <div>
+    <ion-button expand="full" (click)="openInGoogleMaps()">
+      Abrir Google Maps
+    </ion-button>
+  </div>
   <div *ngIf="latitude !== null && longitude !== null">
-    <p><strong>Latitud:</strong> {{ latitude }}</p>
-    <p><strong>Longitud:</strong> {{ longitude }}</p>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Coordenadas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Latitud:</strong> {{ latitude }}</p>
+        <p><strong>Longitud:</strong> {{ longitude }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="latitude === null && longitude === null">
+    <p>Obteniendo ubicación...</p>
   </div>
 </ion-content>
+
+
+
