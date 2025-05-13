@@ -1,0 +1,7 @@
+{
+  "name": "MyGps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
